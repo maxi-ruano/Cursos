@@ -12,7 +12,15 @@ class CursoController extends Controller
 
 
 
+
 {
+
+    public function __construct()
+    {
+        $this->middleware('can:cursos.create')->only('create');
+        $this->middleware('can:cursos.edit')->only('edit');
+        $this->middleware('can:cursos.destroy')->only('destroy');
+    }
     public function index(){
          $cursos=Curso::simplePaginate();
          
@@ -22,13 +30,6 @@ class CursoController extends Controller
     }
 
 
-    public function __construct(){
-       
-        $this->middleware('auth')->only('create');
-
-      
-
-   }
     public function create(){
         return view('cursos.create');
     }

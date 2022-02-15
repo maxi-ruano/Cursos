@@ -30,7 +30,7 @@
 </div>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <a class="btn btn-primary" href="{{route('cursos.edit',$curso)}}" role="button">EDIT</a><br><br>
-<form action="{{route('cursos.destroy',$curso)}}" method="POST">
+<form action="{{route('cursos.destroy',$curso)}}" method="POST" class='formulario-eliminar'>
     @csrf
     @method('delete')
     <button type="submit" class="btn btn-danger">DELETE</button>
@@ -44,6 +44,7 @@
 
 
 @endsection
+
 
 
 

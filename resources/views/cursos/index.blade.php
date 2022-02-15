@@ -139,11 +139,13 @@
     
     </li>        
     @endforeach
-</ul>
+</ul><br><br>
 <div class='links'>
 {{$cursos->links()}}
 </div>
+@can('cursos.create')
 <a class="btn btn-primary" href="cursos/create" role="button">COURSE CREATE</a>
+@endcan
 
     </div>
 </div>

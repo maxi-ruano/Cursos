@@ -46,6 +46,7 @@
         <script src=" {{asset('assets/js/scripts.js')}} "></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        
         <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
             <div class="container px-4 px-lg-5">
                 <a class="navbar-brand" href="#page-top"></a>
@@ -55,7 +56,10 @@
                         <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{route('cursos.store')}}">Courses</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{route('contact.contact')}}">Contact</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{route('cursos.create')}}">Course Create</a></li>
+
+                        @can('cursos.create')
+                            <li class="nav-item"><a class="nav-link" href="{{route('cursos.create')}}">Course Create</a></li>
+                        @endcan
                        
                         {{-- <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li> --}}
                     </ul>

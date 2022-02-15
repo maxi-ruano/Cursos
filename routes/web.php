@@ -42,6 +42,12 @@ Route::get('contact',[ContactController:: class,'contact'])->name('contact.conta
   
 Route::post('contact',[ContactController::class,'na'])->name('contact.na');
 
+Route::get('cursos/create',[CursoController::class,'create'])->middleware('can:cursos.create')->name('cursos.create');
+
+Route::get('cursos/{curso}/edit',[CursoController::class,'edit'])->middleware('can:cursos.edit')->name('cursos.edit');
+
+
+
 
 
 
